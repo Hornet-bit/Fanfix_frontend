@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Routes} from "@angular/router";
+import {FanfixListComponent} from "./component/fanfix-list/fanfix-list.component";
+import {TetstComponent} from "./component/tetst/tetst.component";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'untitled3';
+
 }

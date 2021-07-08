@@ -1,0 +1,14 @@
+.login-dialog-wrapper {
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+}
+
+.mat-form-field {
+  width: 280px;
+}
+
+.button {
+  width: 280px;
+  margin-top: 60px;
+}

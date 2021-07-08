@@ -1,0 +1,24 @@
+<div class="login-dialog-wrapper">
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <h2>Вход</h2>
+    <mat-form-field>
+      <mat-label>Имя</mat-label>
+      <input matInput [formControl]="username">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Введите пароль</mat-label>
+      <input matInput [formControl]="password" [type]="hide ? 'password' : 'text'">
+      <mat-error *ngIf="password.hasError('required')">
+        Введите пароль
+      </mat-error>
+      <mat-error *ngIf="password.hasError('minlength')">
+        Пароль должен состоять из 8 символов и более
+      </mat-error>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+  <button mat-raised-button mat-dialog-close color="primary" (click)="submitForm()" class="button" [disabled]="!loginForm.valid">Войти</button>
+</div>
