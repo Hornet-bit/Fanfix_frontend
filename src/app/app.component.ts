@@ -9,6 +9,6 @@ import {TetstComponent} from "./component/tetst/tetst.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'untitled3';
+  title = 'Fanfics';
 
 }

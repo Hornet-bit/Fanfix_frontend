@@ -1,0 +1,11 @@
+<mat-toolbar>
+  <span>Fanfics</span>
+  <span class="example-spacer"></span>
+  <button class="toolbar-button" [hidden]="!hide" (click)="openRegistrationDialog()">Registratin</button>
+  <button  class="toolbar-button" [hidden]="!hide" (click)="openLoginDialog()" >Authorization</button>
+  <button  class="toolbar-button" [hidden]="hide" (click)="logout()" >logout</button>
+  <button  class="toolbar-button" [hidden]="hide" (click)="createFanfic()" >create fanfic</button>
+  <div mat-card-avatar class="example-header-image toolbar-button" [hidden]="hide"><img src="{{avatar}}"  (click)="settings()" width="40px" height="40px" alt=""></div>
+
+
+</mat-toolbar>

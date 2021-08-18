@@ -1,0 +1,42 @@
+<mat-card class="example-card">
+  <form class="example-form">
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label [ngModel]="title">Title</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label [ngModel]="description">Description</mat-label>
+        <textarea matInput placeholder="Description"></textarea>
+      </mat-form-field>
+    </p>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Fandom</mat-label>
+      <mat-select [ngModel]="fandom">
+        <mat-option *ngFor="let fandom of fandoms" [value]="fandom.fandom">
+          {{fandom.fandom}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <ngx-dropzone [multiple]="false"  (change)="onSelect({event : $event})">
+      <ngx-dropzone-label>Drop it</ngx-dropzone-label>
+      <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove({event : f})">
+        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-preview>
+    </ngx-dropzone>
+    <button (click)="uploadPicture()">upload</button>
+  </form>
+</mat-card>
+<button (click)="createFanfic()">Create</button>

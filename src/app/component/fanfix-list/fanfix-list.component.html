@@ -1,0 +1,45 @@
+<div class="fanfixContainer"*ngFor="let fanfic of fanfics" >
+<!--  {{fanfic.author}}-->
+  <mat-card class="example-card" >
+    <mat-card-header>
+      <div mat-card-avatar >
+        <img mat-card-image src="{{fanfic.authorAvatar}}">
+      </div>
+      <mat-card-title>{{fanfic.title}}</mat-card-title>
+      <mat-card-subtitle>{{fanfic.author}}</mat-card-subtitle>
+      <mat-card-subtitle>{{fanfic.fandom}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{fanfic.picture}}" [hidden]="fanfic.picture==null" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p >
+        {{fanfic.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+              [disabled]="hide">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <div >
+        <button mat-raised-button color="primary" [disabled]="hide" >SHARE</button>
+      </div>
+      <button mat-raised-button color="primary" (click)="readFanfic(fanfic)">Read</button>
+
+
+
+
+      <ng-container>
+        <div class="rating">
+			<span>
+        Rating {{rating.value}} of {{rating.max}}
+      </span>
+          <div [hidden]="hide" [class.dense]="rating.dense">
+            <ngx-material-rating [color]="rating.color" [disabled]="rating.disabled" [dense]="rating.dense"
+                                 [readonly]="rating.readonly" [(ngModel)]="rating.value" [max]="rating.max">
+            </ngx-material-rating>
+          </div>
+        </div>
+      </ng-container>
+    </mat-card-actions>
+  </mat-card>
+</div>

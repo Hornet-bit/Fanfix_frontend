@@ -4,5 +4,7 @@ export interface Fanfic {
   "title": string,
   "author": string,
   "fandom": string,
-  "description": string
+  "description": string,
+  "authorAvatar": string,
+  "picture": string,
 }

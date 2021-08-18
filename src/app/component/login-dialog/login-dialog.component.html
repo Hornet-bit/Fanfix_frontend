@@ -3,11 +3,11 @@
     <h2>Вход</h2>
     <mat-form-field>
       <mat-label>Имя</mat-label>
-      <input matInput [formControl]="username">
+      <input matInput [formControl]="username" value="SoldierOfFortune" >
     </mat-form-field>
     <mat-form-field>
       <mat-label>Введите пароль</mat-label>
-      <input matInput [formControl]="password" [type]="hide ? 'password' : 'text'">
+      <input matInput [formControl]="password" [type]="hide ? 'password' : 'text'" value="hiphop">
       <mat-error *ngIf="password.hasError('required')">
         Введите пароль
       </mat-error>
